@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Language" content="en" />
+        <meta name="language" content="en" />
+        <meta name="robots" content="all, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <title>Test</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="/css/default.css" type="text/css" rel="Stylesheet" />
+        
+        <script type="text/javascript" src="/scripts/common.js"></script>
+        <script type="text/javascript">
+            function theFirst () {
+                alert("onload 1");
+            }
+
+            function theSecond () {
+                alert("onload 2");
+            }
+
+            addLoadEvent(theFirst);
+            addLoadEvent(theSecond);
+        </script>
+    </head>
+
+	<body>
+		<div id="page">
+            <h1>Common js - Usage</h1>
+            <p>Some common js functions and examples of their usage.</p>
+            
+            <h2>Usage</h2>
+            <div class="box">
+                <h3>Add Event</h3>
+                <p>Added a click to <a href="#" id="e1">this link</a></p> 
+                <p><span class="cs_1">addEvent(</span>obj, type, function<span class="cs_1">)</span>;</p>
+                <script type="text/javascript">
+                    function addClick(e) { 
+                        var t = (e.target || e.srcElement); 
+                        alert(t.id);
+                        return false;
+                    }
+                    addEvent(document.getElementById("e1"), "click", addClick);
+                </script>
+            </div>
+            
+            <div class="box">
+                <h3>Add DOM Element</h3>
+                <p id="e2">Added a paragraph after this one. Using append with to the parent on the target.</p> 
+                <p><span class="cs_1">el(</span>type, attr obj, content<span class="cs_1">)</span>;</p>
+                <p><span class="cs_1">getParent(</span>obj, type<span class="cs_1">)</span>;</p>
+                <script type="text/javascript">
+                    var p = document.getElementById("e2"),
+                        d = getParent(p, "DIV");
+                    d.appendChild(el("p", {}, [
+                        el("span", {}, "Here is a link "),
+                        el("a", {href: "#"}, "linky")]                    
+                    ));
+                </script>
+            </div>
+
+            <div class="box">
+                <h3>SlideUp</h3>
+                <p>The para below slid up</p>
+                <p id="e3">This will slide up...</p> 
+                <p><span class="cs_1">slideUp(</span>elem<span class="cs_1">)</span>;</p>
+                <script type="text/javascript">
+                    slideUp(document.getElementById("e3"));
+                </script>
+            </div>
+                
+            <div class="box">
+                <h3>$ syntax</h3>
+                <p>Replaces getElementbyId("e1") with $("e1"). It can also be used to get multiples $("e1", "e2");</p>
+            </div>
+
+		</div>
+    </body>
+</html>
+

@@ -7,4 +7,8 @@ Currently it works for arrays, objects and strings. I haven't really tested or u
 
 Growler
 ======
-This is a wee project that adds growl style messages to a site. I've been playing with it and have a few versions. All have the same functionality, but use different libraries. the plan is, eventually to have a namespaced jQuery version, a jQuery plugin, a library free version and a YUI implementation of some sort. 
+This is a wee project that adds growl style messages to a site. I've been playing with it and have a few versions. All have the same functionality, but use different libraries. the plan is, eventually to have a namespaced jQuery version, a jQuery plugin, a library free version and a YUI implementation of some sort. An example page can be seen at http://anttears.co.uk/growler.
+
+Common
+=======
+Just some common functions for when I am without a library...
