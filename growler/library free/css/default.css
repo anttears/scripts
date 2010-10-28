@@ -1,0 +1,133 @@
+/* start with a quick reset */
+html, body, ul, ol, li, p,
+h1, h2, h3, h4, h5, h6,
+form, fieldset, a, dd 
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html, body
+{
+	height: 100%;
+}
+
+body 
+{
+    text-align: center;
+    font-family: Arial, Sans-Serif;
+    font-size: 75%; /* standard 12px */
+    color: #3d3d3d;
+    background: #ccc;
+}
+
+p, h3, h2, li {
+	margin-bottom: 7px;
+}
+
+#page {
+	background-color: #fff;
+	margin: 0 auto;
+	text-align: left;
+	width: 960px;
+	position: relative;
+	padding: 0 10px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+h1 {
+	font-size: 1.6em;
+	padding: 12px 0;
+}
+
+#testForm, .box {
+	padding: 12px;
+	border: 1px solid #ccc;
+	width: 400px;
+	background-color: #efefef;
+	margin: 12px 0 24px;
+}
+
+fieldset div {
+	margin: 7px 0;
+}
+
+legend {
+	margin-bottom: 8px;
+	font-size: 1.2em;
+}
+
+.cs_1 {
+	color: #900;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+    color: #069;
+}
+
+/* GROWL CSS  */
+#growlContainer  
+{
+    width:300px; 
+    position:absolute; 
+    top:10px; 
+    right:10px; 
+    z-index: 99; 
+}
+
+#growlList {
+	list-style-type: none;
+}
+
+.growl {
+    -moz-border-radius: 0.6em;
+	-webkit-border-radius: 0.6em;
+  	border-radius: 0.6em;
+	padding: 8px;
+	margin-bottom: 7px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+/* Close Button */
+.close { 
+    color:#fff; 
+    float: right; 
+    width: 1.1em; 
+    background-color: #5b5b5b; 
+    padding: 0 0 1px 0; 
+    text-align: center; 
+    font-size: 12px; 
+    cursor: pointer; 
+    -moz-border-radius: 10px; 
+    -webkit-border-radius: 10px; 
+    border-radius: 10px; 
+}
+
+close:hover { color:#333; background: #FFD740; }
+
+/* Boxes  */
+/*  Black box  */
+.blb 
+{
+    background: #000; 
+    background: rgba(0,0,0,0.8);
+	color: #fff;
+	box-shadow: 0 1px 0 #666;
+}
+
+.blb  h2 {
+	color: #FFD740;
+    text-shadow: 1px 1px 0 #000;
+	font-weight: normal;
+	font-size: 1.4em;
+}
+

@@ -4,3 +4,7 @@ Console.js
 ==========
 A quick and pretty dirty attempt at creating a console.log for IE. It just spits out the content of any console.log javacript statement in a div at the foot of the page.
 Currently it works for arrays, objects and strings. I haven't really tested or used it in anger though, so there's probably loads of stuff I've missed.
+
+Growler
+======
+This is a wee project that adds growl style messages to a site. I've been playing with it and have a few versions. All have the same functionality, but use different libraries. the plan is, eventually to have a namespaced jQuery version, a jQuery plugin, a library free version and a YUI implementation of some sort. 
