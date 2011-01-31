@@ -2,7 +2,7 @@
 //    ######   Helper functions   #######
 //   ######                      ######
 
-// Add events to the DOM  for onclicks to remove the growl
+// Add events to the DOM  
 function addEvent( obj, type, fn ) {
     if (obj.addEventListener) {
         obj.addEventListener( type, fn, false );
@@ -234,3 +234,10 @@ function $() {
 	return elements;
 }
 
+function typeofPrim (prim) {
+    if (!prim) return "null";
+    var obj = {};
+    var type = obj.toString.call(prim).split(" ")[1];
+    type = type.substring(0, type.length - 1);
+    return type;
+}
