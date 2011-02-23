@@ -12,3 +12,7 @@ This is a wee project that adds growl style messages to a site. I've been playin
 Common
 =======
 Just some common functions for when I am without a library...
+
+Resender
+=======
+A little function for ensuring that a post which requires no return data is actually received by the server.
