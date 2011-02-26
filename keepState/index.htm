@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html lang="en" > 
+	<head>
+		<meta name="language" content="en" />
+		<meta name="robots" content="all,follow" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="keywords" content="javascript, state, object" />
+		<meta name="description" content="Ant Tears, Frontend web developer" />
+		<title>Keep state</title>
+	    <style type="text/css">
+            html, body {height: 100%}
+            body {background: #ccc; text-align: center; font-family: Helvetica, Arial, sans-serif; font-size: 75%;}
+            #page {background: #fff; margin: 0 auto; text-align: left; height: 100%; width: 760px;}
+            form {padding: 12px;}
+            h1 {font-size: 1.6em; padding: 12px 0 0 12px;}
+            h2 {font-size: 1.4em; padding: 6px; background: #ccc; color: #900;}
+            p {padding: 6px 12px}
+        </style>
+    </head>
+	<body>
+		<div id="page" class="rc3">
+            <h1>Keeping state from 2 sources</h1>
+            <p>In this example, there are 2 competing states. Both states must agree to trigger a state change AND the change must be incremental. 
+            So in the initial case, at state 1, the next state is state 2 and this can only occur when both internal and external states are 2.
+            The exception to this rule is that you can immediately go to state 5 by setting the internalState to 5. State 5 is the final state.</p>
+		    <form action="#" methog="get">
+                <label for="internalState">Internal State</label>
+                <input type="text" id="internalState" value="1">
+                <hr />
+                
+                <label for="externalState">External State</label>
+                <input type="text" id="externalState" value="1">
+                <hr />
+                <input type="button" id="changeState" value="Update states" />
+                <h2>Actual state: <span id="state">1</span>
+                </h2>
+            </form>
+        </div>
+		<script src="keepState.js"></script>
+	</body>
+</html>
+
+
