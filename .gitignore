@@ -1,0 +1,23 @@
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.tar
+*.zip
+*.rar
+
+# Logs #
+########
+*.log
+*.sql
+*.sqlite
+
+#  OS stuff #
+#############
+.DS_Store?
+.DS_Store
+ethumbs.db
+Icon?
+Icon
+Thumbs.db

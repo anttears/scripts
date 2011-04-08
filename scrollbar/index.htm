@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html lang="en" > 
+    <head> 
+        <meta name="language" content="en" /> 
+        <meta name="robots" content="all, follow" /> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+        <style type="text/css">
+            body, html { height: 100%}
+            body {color: #333; background-color: #efefef; text-align: center}
+            #page {background: #fff; margin: 0 auto; padding: 12px; text-align: left; width: 760px; height: 100%}
+            .box {border: 1px solid #ccc; padding: 6px; height: 180px; overflow: hidden; position: relative}
+            .sb_wrapper {
+                height: 200px; 
+                width: 20px; 
+                position: absolute; 
+                background-color: #ccc; 
+                padding-top: 20px;
+                right: 0;
+                top: 0;
+            }
+            .ui-slider {position: relative; height: 160px; width: 20px; background-color: #999}
+            .ui-slider-handle {position: absolute; height: 40px; width: 20px; background-color: #666; margin-bottom: -20px;}
+
+        </style>
+        <title>Scroller</title>
+        <!--[if IE]>
+            <script>
+                // Only run script for IE to prep DOM for new html5 elements - therefore must be in head
+                /*@cc_on'abbr article aside audio canvas details figcaption figure footer header hgroup mark menu meter nav output progress section summary time video'.replace(/\w+/g, function (n) { document.createElement(n) })@*/
+            </script>   
+        <![endif]--> 
+    </head> 
+    <body> 
+        <div id="page"> 
+            <div class="box" id="b1">
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+                <h2>Lots of content</h2>
+            <div class="sb_wrapper">
+                <div class="ui-slider">
+                    <div class="ui-slider-handle"></div>
+                </div>
+            </div>
+            </div>
+        </div> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+        <script src="sb.js"></script>
+    </body> 
+</html> 

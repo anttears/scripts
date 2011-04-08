@@ -1,0 +1,114 @@
+html, body, ul, ol, li, p,
+h1, h2, h3, h4, h5, h6,
+form, fieldset, a, dd {
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+html{
+font-size: 100.01%;
+}
+
+form, input, 
+textarea, select{
+	font-size:100%;
+}
+
+abbr, 
+acronym, 
+span.abbr {
+	cursor: help; 
+	border-bottom: 1px dashed #000;
+}
+
+ul{
+	list-style:none;
+}
+
+table{
+	border-collapse: collapse;
+	font-size:100%;
+}
+
+a{
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+img{
+	border:0;
+}
+
+/* UTILITY - generic classes information only */
+
+.inline{
+	display:inline;
+}
+
+.remove{
+	display:none;
+}
+
+.hideLegend legend{
+	display:none;
+}
+
+.hide, 
+#skipNav {
+	position:absolute;
+	top:0;
+	left:-200em;
+	width:20em;
+}
+
+.fr{
+	float:right;
+}
+
+.fl{
+	float:left;
+}
+
+.tar{
+	text-align:right;
+}
+
+.tac{
+	text-align:center;
+}
+
+.tal{
+	text-align:left;
+}
+
+.half{
+	width:50%; /*Clearly if using 2 of these - there can be no margin, padding or borders attached */
+	padding:0;
+	margin:0;
+	border:0;
+}
+
+.halfish{
+	width:48%;
+}
+
+/* FULL CLEAR - forces a container to surround all children - regardless of floating */
+
+.fc:after, .FormRow:after{
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.fc, .FormRow{ display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .fc, * html .FormRow { height: 1%; }
+.fc, .FormRow { display: block; }
+
