@@ -18,6 +18,14 @@ body {
     padding: 0 12px;
 }
 
+h2.result {
+    border: 1px solid #acacac;
+    background: #ccc;
+    padding: 8px;
+    margin: 12px 0;
+    color: #900;
+}
+
 fieldset {
     margin: 12px 0 12px 0;
 }
