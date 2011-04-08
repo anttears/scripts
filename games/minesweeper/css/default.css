@@ -18,9 +18,22 @@ body {
     padding: 0 12px;
 }
 
+fieldset {
+    margin: 12px 0 12px 0;
+}
+
+legend {
+    font-size: 1.4em;
+}
+
+label {
+    margin-right: 6px;
+    padding-bottom: 4px;
+}
+
 table.ms {
     border: 1px solid #aaa;
-    margin: 12px 5px;
+    margin: 20px 5px;
 }
 
 table.ms td {

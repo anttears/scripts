@@ -12,9 +12,9 @@ function MineSweeper (c, r, b) {
         gridObjs = [];
 
     function generateGrid () {
-        tableFrag = $('<table></table>').attr({
-            "class": "ms"    
-        });
+        tableFrag = $('<table></table>').
+            attr({"class": "ms"}).
+            bind("click", clickSquare);
         for (var i = 0; i < rows; i += 1) {
             var tr = $('<tr></tr>');
             var r = "r" + i;
@@ -29,15 +29,15 @@ function MineSweeper (c, r, b) {
                 var td = $('<td></td>')
                     .attr("id", r + c)
                     .appendTo(tr)
-                    .bind("click", clickSquare);
             }
             tr.appendTo(tableFrag);
         }
     }
 
-    function clickSquare () {
-        var td = $(this),
+    function clickSquare (e) {
+        var td = $(e.target),
             rc = td.attr("id");
+            if (td[0].nodeName !== "TD") { return; }
         attempt += 1;
         revealSquare(rc);
     }
@@ -47,22 +47,19 @@ function MineSweeper (c, r, b) {
             sq = gridObjs[rc],
             type = sq.type,
             n = getNumbers(rc);
-
-        if (type === "B") {
-            alert("Game Over");
-            return;
-        }
-
-        if (revealedCnt === numberToReveal - 1) {
-            alert("winner");
-            return;
-        }
-
+        
         if (sq.revealed !== true) {        
             $("#" + rc).append(type);
             sq.revealed = true;
             revealedCnt += 1;
         }
+
+        if (type === "B") {
+            alert("Game Over");
+            $(".ms").unbind("click");
+            return;
+        }
+
 
         for (var i = 0; i < len; i += 1) {
             var m = matrix[i],
@@ -80,12 +77,16 @@ function MineSweeper (c, r, b) {
                 $("#" + newrc).append(t); 
                 
                 if (t === 0) {
-                    console.log("t = 0: " + newrc);
                     revealSquare(newrc);
                 }
             }
         }
  
+        if (revealedCnt === numberToReveal) {
+            alert("winner");
+            $(".ms").unbind("click");
+            return;
+        }    
     }
 
     function placeBombs () {
@@ -93,13 +94,13 @@ function MineSweeper (c, r, b) {
         for (var i = 0; i < bombs; i += 1) {
             var num = Math.floor(Math.random() * list.length),
                 sq = list[num];
-            tableFrag.find("#" + sq).append("B");
+            //tableFrag.find("#" + sq).append("B");
             gridObjs[sq].type = "B";
             list.splice(num, 1);
         }
     }
 
-    function bombNumbers (r, c) {
+    function setNumbers (r, c) {
         var cnt = 0,
             rc = "r" + r + "c" + c,
             len = matrix.length;
@@ -126,14 +127,14 @@ function MineSweeper (c, r, b) {
             return[r, c];
     }
 
-    function makeObj () {
+    function makeGridObjs () {
         var len = grid.length;
         for (var i = 0; i < len; i += 1) {
             var sq = grid[i],
                 obj = gridObjs[sq];
             if (obj.type !== "B") {
                 var n = getNumbers(sq);
-                bombNumbers(n[0], n[1]);
+                setNumbers(n[0], n[1]);
             }
         }
     }
@@ -141,7 +142,7 @@ function MineSweeper (c, r, b) {
     this.init = function () {
         generateGrid();
         placeBombs();
-        makeObj();
+        makeGridObjs();
         $("#mt").after(tableFrag);
         numberToReveal = grid.length - bombs;
     }
@@ -149,7 +150,8 @@ function MineSweeper (c, r, b) {
 
 
 $("document").ready(function () {
-    $("#gridForm").bind("submit, click", function () {
+    $("#gridForm").bind("submit", function () {
+        $(".ms").remove();
         var form = $(this),
             cols = form.find("#cols").val(),
             rows = form.find("#rows").val(),
