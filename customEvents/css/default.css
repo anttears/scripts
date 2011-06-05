@@ -1,0 +1,19 @@
+html, body {
+    height: 100%;    
+}
+
+body {
+    text-align: center;
+    background: #efefef;
+    font-family: "Helvetica, Arial";
+    font-size: 75%;
+}
+
+#page {
+    margin: 0 auto;
+    text-align: left;
+    background: #fff;
+    height: 100%;
+    width: 760px;
+    padding: 0 12px;
+}

@@ -76,7 +76,6 @@ function MineSweeper (c, r, b) {
             return;
         }
 
-
         for (var i = 0; i < len; i += 1) {
             var m = matrix[i],
                 newR = n[0] + m[0],
@@ -156,6 +155,7 @@ function MineSweeper (c, r, b) {
     }
 
     this.init = function () {
+        $(".ms").remove();
         generateGrid();
         placeBombs();
         makeGridObjs();
@@ -167,7 +167,6 @@ function MineSweeper (c, r, b) {
 
 $("document").ready(function () {
     $("#gridForm").bind("submit", function () {
-        $(".ms").remove();
         var form = $(this),
             cols = form.find("#cols").val(),
             rows = form.find("#rows").val(),
