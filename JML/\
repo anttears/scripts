@@ -7,7 +7,7 @@ localStorage.clear();
 // these functions have been highlighted in the code
 ////////////
 
-var JmlObj = (function () {
+var jmlObj = (function () {
     function Jml (ajaxContent, params) {
         this.aj = ajaxContent;
         this.options = params;
@@ -115,15 +115,9 @@ var JmlObj = (function () {
         };
     }
 
-
-    var Jml2 = {
-        handleContent: function () {
-            console.log("woop");
-        }
-    }
     return function (ajaxContent, params) {
-        var F = function () {};
-        F.prototype = Jml2;
-        return new F;
+        var o = {};
+        o.prototype = new Jml(ajaxContent, params);
+        return o;
     }
-})();
+}

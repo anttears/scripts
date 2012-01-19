@@ -74,7 +74,8 @@
             this.type = "GET";
             this.dataType = "JSON";
             this.success = function (ajaxContent, params) {
-                var dto = new Jml(ajaxContent, params);
+                var dto = JmlObj(ajaxContent, params);
+                console.log(dto);
                 dto.handleContent();
             };
 
